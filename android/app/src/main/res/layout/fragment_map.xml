@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root_layout">
+
+    <!-- 지도 뷰 -->
+    <com.naver.maps.map.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 투명 뷰: 색상 변경용 -->
+    <View
+        android:id="@+id/overlay_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent" />
+
+    <!-- 경고창 레이아웃 -->
+    <LinearLayout
+        android:id="@+id/vehicle_warning_layout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_corner"
+        android:visibility="gone"
+        android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/warning_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/warning_img" />
+
+    <TextView
+        android:id="@+id/warning_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Moving Vehicle Detected"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:paddingStart="8dp"
+        android:fontFamily="@font/cafe24decobox"/>
+    </LinearLayout>
+
+    <!-- UI 컨트롤 -->
+    <LinearLayout
+        android:id="@+id/control_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:padding="16dp"
+        android:background="#88FFFFFF">
+
+    <EditText
+        android:id="@+id/start_point"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Departure Address"
+        android:fontFamily="@font/cafe24decobox"/>
+
+    <EditText
+        android:id="@+id/end_point"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Arrival Address"
+        android:fontFamily="@font/cafe24decobox"/>
+
+    <Button
+        android:id="@+id/find_route_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Turn Navigation On"
+        android:fontFamily="@font/cafe24decobox"
+        android:textColor="@android:color/black"
+        android:backgroundTint="#B2DFDB"/>
+
+    <Button
+        android:id="@+id/test_vehicle_detection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vehicle Warning Button"
+        android:fontFamily="@font/cafe24decobox"
+        android:textColor="@android:color/black"
+        android:backgroundTint="#B2DFDB"/>
+    </LinearLayout>
+</FrameLayout>

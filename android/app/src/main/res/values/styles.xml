@@ -1,0 +1,19 @@
+<resources>
+    <!-- 연한 초록색 버튼 스타일 -->
+    <style name="GreenButtonTheme">
+        <item name="android:background">@drawable/rounded_green_button</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/cafe24decobox</item>
+    </style>
+
+    <!-- 연한 회색 버튼 스타일 -->
+    <style name="GrayButtonTheme">
+        <item name="android:background">@drawable/rounded_gray_button</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/cafe24decobox</item>
+    </style>
+</resources>

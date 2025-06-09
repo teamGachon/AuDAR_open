@@ -1,0 +1,34 @@
+name: Deploy to Docker Hub
+
+on:
+  pull_request:
+    branches:
+      - master
+
+
+jobs:
+  build-and-push-docker:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Build with Gradle
+        run: ./gradlew build -x test
+
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUD_IMAGE_NAME }}:latest
+
+      - name: Login to Docker Hub using Access Token
+        run: echo "${{ secrets.DOCKERHUD_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUD_USERNAME }} --password-stdin
+
+      - name: Push the Docker image
+        run: docker push ${{ secrets.DOCKERHUD_IMAGE_NAME }}:latest

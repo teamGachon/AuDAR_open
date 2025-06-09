@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#454545"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vehicle Detection Test"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test the system's ability to detect vehicles"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <!-- Main Content -->
+    <LinearLayout
+        android:id="@+id/mainContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_below="@id/header">
+
+        <!-- Status Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="16dp"
+            android:layout_marginBottom="160dp">
+
+            <TextView
+                android:id="@+id/resultTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="결과 표시"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/vehicleDetectedView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="차량 감지 여부: 미감지"
+                android:textSize="14sp"
+                android:textColor="#757575"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <!-- TensorFlow 모델 수치 값 -->
+            <TextView
+                android:id="@+id/scoreTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Detection Score: N/A"
+                android:textSize="14sp"
+                android:textColor="#00796B"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Real-time Feedback Icon -->
+        <ImageView
+            android:id="@+id/imgDetectionStatus"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:src="@drawable/car_detected"
+            android:contentDescription="Detection Status Icon"
+            android:layout_marginBottom="60dp" />
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/btnStartDetection"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Start"
+                android:gravity="center"
+                android:backgroundTint="#FF480B"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="8dp"
+                android:padding="12dp"
+                android:background="@drawable/rounded_button" />
+
+            <TextView
+                android:id="@+id/btnStopDetection"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Stop"
+                android:gravity="center"
+                android:backgroundTint="#2088FF"
+                android:textColor="#FFFFFF"
+                android:layout_marginStart="8dp"
+                android:padding="12dp"
+                android:background="@drawable/rounded_button" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
