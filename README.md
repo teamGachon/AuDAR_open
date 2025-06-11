@@ -2,10 +2,9 @@
 
 ---
 
+
 ## 🔰 프로젝트 개요
-<img width="470" alt="image" src="https://github.com/user-attachments/assets/6a3ef009-7996-4d0a-b0b1-d09cd1560b6f" />
-
-
+![Audar_logo](https://github.com/user-attachments/assets/e3136c6f-9d60-4f35-858d-0d8f97086219)
 - AuDAR는 실시간  안전 경고 시스템입니다.
 
 이 시스템은 **ESP32 기반 mmWave 레이더**와 **Android 스마트폰의 음향 감지 기능**을 융합하여, **게임이론 기반 Adaptive Partial Offloading** 전략으로 위험도를 판단하고, 사용자에게 실시간으로 경고합니다.
